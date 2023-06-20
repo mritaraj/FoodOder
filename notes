@@ -1,0 +1,93 @@
+// const SLIDES = [
+//     {
+//         title: "Today's workout plan",
+//         text: "We're gonna do 3 fundamental exercises."
+//     },
+//     {
+//         title: "First, 10 push-ups",
+//         text: "Do 10 reps. Remember about full range of motion. Don't rush."
+//     },
+//     {
+//         title: "Next, 20 squats",
+//         text: "Squats are important. Remember to keep your back straight."
+//     },
+//     {
+//         title: "Finally, 15 sit-ups",
+//         text: "Slightly bend your knees. Remember about full range of motion."
+//     },
+//     {
+//         title: "Great job!",
+//         text: "You made it, have a nice day and see you next time!"
+//     }
+// ];
+//slide.js
+import React, { useState } from "react";
+
+function Slides({ slides }) {
+  const [sliddata, setSliddata] = useState(slides);
+  const [showdata, setShowData] = useState({});
+  const [activeSlid, setActiveSlid] = useState(1);
+  const handleNext = (str) => {
+    let activeSlid = str;
+    console.log(sliddata);
+    let arr = sliddata.length;
+    let obj;
+    // obj = {
+    //   title: sliddata[activeSlid].title,
+    //   text: sliddata[activeSlid].text
+    // }
+    setShowData(obj);
+    // setActiveSlid(setActiveSlid++)
+
+    console.log(showdata, "showdatashowdata");
+  };
+  return (
+    <div>
+      <div id="navigation" className="text-center">
+        <button data-testid="button-restart" className="small outlined">
+          Restart
+        </button>
+        <button data-testid="button-prev" className="small">
+          Prev
+        </button>
+        <button
+          data-testid="button-next"
+          className="small"
+          onClick={() => handleNext("button-next")}
+        >
+          Next
+        </button>
+      </div>
+      {sliddata.map((ele, idx) => {
+        return (
+          <div id="slide" className="card text-center">
+            <h1 key={ele.idx} data-testid="title">
+              {ele.title}
+            </h1>
+            <p key={ele.idx} data-testid="text">
+              {ele.text}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default Slides;
+
+////////
+const heading = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child" }, [
+    React.createElement(
+      "h3",
+      { id: "heading" },
+      "I am coming from react script"
+    ),
+  ]),
+]);
+//{}= this object is the place wher you place a attributes to your tags suppose your tag h3 you wan t to give id  or classeslike id:"headinf"
+// this react.createElement is reate element is nothing but a javscript onject.
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+//this render method takes object and convert h3 tag put inside root this tag and render it

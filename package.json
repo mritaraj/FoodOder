@@ -1,0 +1,15 @@
+{
+  "name": "react-0-1",
+  "version": "1.0.0",
+  "description": "This is a food order App",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:mritaraj/FoodOder.git"
+  },
+  "author": "Amrita Rajbhar",
+  "license": "ISC"
+}
